@@ -10,7 +10,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Exer1 {
 
     public static void main(String[] args) {
         Pessoa pessoa = new Pessoa();
