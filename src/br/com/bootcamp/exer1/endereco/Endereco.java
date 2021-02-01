@@ -1,4 +1,4 @@
-package br.com.bootcamp.endereco;
+package br.com.bootcamp.exer1.endereco;
 
 public class Endereco {
 
