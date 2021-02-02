@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula.classe;
+package br.com.bootcamp.exer.aula.classe;
 
 //classe: Cachorro
 public class Cachorro {

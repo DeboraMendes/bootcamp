@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula.encapsulamento;
+package br.com.bootcamp.exer.aula.encapsulamento;
 
 //classe: Cachorro
 public class Cachorro {

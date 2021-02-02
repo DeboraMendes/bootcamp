@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula;
+package br.com.bootcamp.exer.aula;
 
 public class Principal {
 

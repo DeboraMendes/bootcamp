@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula.construtorSemParametros;
+package br.com.bootcamp.exer.aula.construtorSemParametros;
 
 public class Principal {
 
