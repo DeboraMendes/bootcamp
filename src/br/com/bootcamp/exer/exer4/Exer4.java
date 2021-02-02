@@ -22,7 +22,7 @@ public class Exer4 {
     }
 
     public static void popularOsAtributos() {
-        System.out.println("-------------------Exer 3----------------");
+        System.out.println("-------------------Exer 4----------------");
 
         Livro livro1 = new Livro(1, "Lógica de Programação");
         Livro livro2 = new Livro(2, "Java");

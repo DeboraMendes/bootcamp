@@ -37,8 +37,8 @@ public class GerenciadorEmprestimo {
     private boolean permitirEmprestimo(Livro livro) {
         boolean livroDisponivelParaEmprestimo = true;
         //for enhanced funciona igual ao for normal
-        for (SolicitacaoEmprestimo solicitacaoEmprestimo : solicitacaoEmprestimoList) {
-            if (solicitacaoEmprestimo.existeEmprestimoEmAberto(livro)) {
+        for (SolicitacaoEmprestimo solicitacaoAtual : solicitacaoEmprestimoList) {
+            if (solicitacaoAtual.existeEmprestimoEmAberto(livro)) {
                 livroDisponivelParaEmprestimo = false;
                 break;
             }
@@ -57,8 +57,8 @@ public class GerenciadorEmprestimo {
 
     public void historicoEmprestimos() {
         //for enhanced funciona igual ao for normal
-        for (SolicitacaoEmprestimo solicitacaoEmprestimo : solicitacaoEmprestimoList) {
-            System.out.println(solicitacaoEmprestimo);
+        for (SolicitacaoEmprestimo solicitacaoAtual : solicitacaoEmprestimoList) {
+            System.out.println(solicitacaoAtual);
         }
     }
 
@@ -80,11 +80,11 @@ public class GerenciadorEmprestimo {
         // será agrupado os livros e somado suas quantidades
         Map<Livro, Integer> livroQuantidade = new HashMap<>();
         //for enhanced funciona igual ao for normal
-        for (SolicitacaoEmprestimo solicitacaoEmprestimo : solicitacaoEmprestimoList) {
+        for (SolicitacaoEmprestimo solicitacaoAtual : solicitacaoEmprestimoList) {
             //se o livro estiver no livroQuantidade será retornada a quantidade, se não será retornado zero
             // depois será somado um
-            int quantidade = (livroQuantidade.getOrDefault(solicitacaoEmprestimo.getLivro(), 0)) + 1;
-            livroQuantidade.put(solicitacaoEmprestimo.getLivro(), quantidade);
+            int quantidade = (livroQuantidade.getOrDefault(solicitacaoAtual.getLivro(), 0)) + 1;
+            livroQuantidade.put(solicitacaoAtual.getLivro(), quantidade);
         }
         return livroQuantidade;
     }
