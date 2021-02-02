@@ -1,5 +1,8 @@
 package br.com.bootcamp.exer3;
 
+import br.com.bootcamp.exer3.grupoPessoa.GrupoPessoa;
+import br.com.bootcamp.exer3.pessoa.Pessoa;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -13,10 +16,5 @@ public class Exer3 {
         grupoPessoa.adicionar(pessoa1);
         grupoPessoa.adicionar(pessoa2);
         grupoPessoa.adicionar(pessoa3);
-
-        for (int i = 0; i < grupoPessoa.getPessoaList().size(); i++) {
-            Pessoa pessoaAtual = grupoPessoa.getPessoaList().get(i);
-            System.out.println("pessoaAtual de i: " + i + " " + pessoaAtual);
-        }
     }
 }

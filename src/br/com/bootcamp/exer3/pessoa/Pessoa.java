@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer3;
+package br.com.bootcamp.exer3.pessoa;
 
 import java.time.LocalDate;
 
