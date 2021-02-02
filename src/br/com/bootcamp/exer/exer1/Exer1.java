@@ -1,9 +1,9 @@
-package br.com.bootcamp.exer1;
+package br.com.bootcamp.exer.exer1;
 
-import br.com.bootcamp.exer1.endereco.Endereco;
-import br.com.bootcamp.exer1.pessoa.Pessoa;
-import br.com.bootcamp.exer1.telefone.Telefone;
-import br.com.bootcamp.exer1.telefone.TipoTelefone;
+import br.com.bootcamp.exer.exer1.endereco.Endereco;
+import br.com.bootcamp.exer.exer1.pessoa.Pessoa;
+import br.com.bootcamp.exer.exer1.telefone.Telefone;
+import br.com.bootcamp.exer.exer1.telefone.TipoTelefone;
 
 import java.time.LocalDate;
 import java.time.Month;

@@ -1,7 +1,7 @@
-package br.com.bootcamp.exer3;
+package br.com.bootcamp.exer.exer3;
 
-import br.com.bootcamp.exer3.grupoPessoa.GrupoPessoa;
-import br.com.bootcamp.exer3.pessoa.Pessoa;
+import br.com.bootcamp.exer.exer3.grupoPessoa.GrupoPessoa;
+import br.com.bootcamp.exer.exer3.pessoa.Pessoa;
 
 import java.time.LocalDate;
 import java.time.Month;

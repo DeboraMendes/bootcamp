@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer1.telefone;
+package br.com.bootcamp.exer.exer1.telefone;
 
 public class Telefone {
 

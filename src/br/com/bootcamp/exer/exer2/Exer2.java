@@ -1,6 +1,6 @@
-package br.com.bootcamp.exer2;
+package br.com.bootcamp.exer.exer2;
 
-import br.com.bootcamp.exer2.calculadora.Calculadora;
+import br.com.bootcamp.exer.exer2.calculadora.Calculadora;
 
 public class Exer2 {
 

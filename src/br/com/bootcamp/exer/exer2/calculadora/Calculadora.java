@@ -1,4 +1,4 @@
-package br.com.bootcamp.exer2.calculadora;
+package br.com.bootcamp.exer.exer2.calculadora;
 
 public class Calculadora {
 
