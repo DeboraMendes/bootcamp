@@ -8,8 +8,8 @@ public class Exer5 {
         Empregado empregado = new Empregado(
                 "Debora",
                 "123",
-                0,
-                0
+                100,
+                10
         );
         double valor2 = empregado.calculaValorTotalSalario();
         empregado.setNome("Debora Mendes");
