@@ -1,7 +1,7 @@
 package br.com.bootcamp.exer.exer7.teste;
 
-import br.com.dev.bootcamp.exer.exer7.conta.ContaBancaria;
-import br.com.dev.bootcamp.exer.exer7.conta.ContaPoupanca;
+import br.com.bootcamp.exer.exer7.conta.ContaBancaria;
+import br.com.bootcamp.exer.exer7.conta.ContaPoupanca;
 
 import java.math.BigDecimal;
 

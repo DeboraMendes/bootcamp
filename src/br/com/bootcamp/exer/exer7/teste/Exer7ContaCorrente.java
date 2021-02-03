@@ -1,7 +1,7 @@
 package br.com.bootcamp.exer.exer7.teste;
 
-import br.com.dev.bootcamp.exer.exer7.conta.ContaBancaria;
-import br.com.dev.bootcamp.exer.exer7.conta.ContaCorrente;
+import br.com.bootcamp.exer.exer7.conta.ContaBancaria;
+import br.com.bootcamp.exer.exer7.conta.ContaCorrente;
 
 import java.math.BigDecimal;
 
@@ -25,14 +25,29 @@ public class Exer7ContaCorrente {
         System.out.println("----------------Exer 7--------------");
 
         ContaBancaria contaCorrente = new ContaCorrente("001", BigDecimal.valueOf(50));
+
         contaCorrente.depositar(BigDecimal.valueOf(100));
-        System.out.println(contaCorrente);
+        System.out.println("Depósito OK: " + contaCorrente);
+        System.out.println("------------------");
+
         contaCorrente.sacar(BigDecimal.valueOf(90));
-        System.out.println(contaCorrente);
+        System.out.println("Não Usei Crédito OK: " + contaCorrente);
+        System.out.println("------------------");
+
         contaCorrente.sacar(BigDecimal.valueOf(20));
-        System.out.println(contaCorrente);
+        System.out.println("Usei Crédito: " + contaCorrente);
+        System.out.println("------------------");
+
         contaCorrente.sacar(BigDecimal.valueOf(50));
-        System.out.println(contaCorrente);
+        System.out.println("Sem Crédito: " + contaCorrente);
+        System.out.println("------------------");
+
+        contaCorrente.depositar(BigDecimal.valueOf(5));
+        System.out.println("Depósito OK: " + contaCorrente); // devolver crédito
+        System.out.println("------------------");
+
+        contaCorrente.depositar(BigDecimal.valueOf(5));
+        System.out.println("Depósito OK: " + contaCorrente); // devolver crédito
 
         System.out.println("------------------------------------");
     }
