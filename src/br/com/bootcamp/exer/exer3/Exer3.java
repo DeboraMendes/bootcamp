@@ -1,36 +1,56 @@
 package br.com.bootcamp.exer.exer3;
 
-import br.com.bootcamp.exer.exer3.grupoPessoa.GrupoPessoa;
-import br.com.bootcamp.exer.exer3.pessoa.Pessoa;
-
 import java.time.LocalDate;
-import java.time.Month;
 
+/**
+ * Desenvolva uma rotina para controlar empréstimos de livros para alunos.
+ * Um aluno pode emprestar mais de um livro, mas o livro não pode ser emprestado para mais de um aluno ao mesmo tempo.
+ * Sugestão, crie as classes Aluno, Livro(adicione um atributo id para verificar se o livro já está emprestado), Empréstimo, Solicitação Empréstimo.
+ * Implemente uma classe de Gerenciador de Empréstimos para guardar as informações.
+ * Apresentar no mínimo três históricos de empréstimos(aluno, livro e data de empréstimo).
+ * Listar o livro que teve mais solicitações de empréstimos com a quantidade(considerar empréstimos e tentativas de empréstimo).
+ * Implemente uma classe para testar as informações.
+ */
 public class Exer3 {
 
-    public static void main(String[] args) {
-        System.out.println("----------------Exer 2--------------");
-
-        System.out.println("---------Adicionar Pessoas----------");
-        GrupoPessoa grupoPessoa = new GrupoPessoa();
-        grupoPessoa.adicionar(
-                new Pessoa("(Fez 18 anos ontem)", "01234567891", LocalDate.of(2003, Month.JANUARY, 28))
-        );
-        grupoPessoa.adicionar(
-                new Pessoa("(Está fazendo 18 anos hoje)", "01234567892", LocalDate.of(2003, Month.JANUARY, 29))
-        );
-        grupoPessoa.adicionar(
-                new Pessoa("(Vai fazer 18 anos amanhã)", "01234567893", LocalDate.of(2003, Month.JANUARY, 30))
-        );
-        grupoPessoa.adicionar(
-                new Pessoa("Debora", "01234567894", LocalDate.of(1998, Month.MARCH, 8))
-        );
-        System.out.println("---------Dados das Pessoas----------");
-        grupoPessoa.dadosDoGrupoPessoa();
-        System.out.println("--Dados das Pessoas com Maior Idade--");
-        grupoPessoa.dadosDoGrupoPessoaComMaiorIdade();
-        System.out.println("--Dados das Pessoas com Menor Idade--");
-        grupoPessoa.dadosDoGrupoPessoaComMenorIdade();
-        System.out.println("-------------------------------------");
+    public static void main(String[] a) {
+        popularOsAtributos();
     }
+
+    public static void popularOsAtributos() {
+        System.out.println("-------------------Exer 3----------------");
+
+        Livro livro1 = new Livro(1, "Lógica de Programação");
+        Livro livro2 = new Livro(2, "Java");
+        Livro livro3 = new Livro(3, "Orientação a Objetos");
+        Livro livro4 = new Livro(4, "Java");
+
+        Aluno aluno1 = new Aluno("Aluno 1");
+        Aluno aluno2 = new Aluno("Aluno 2");
+
+        GerenciadorEmprestimo gerenciadorEmprestimo = new GerenciadorEmprestimo();
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno1, livro1, LocalDate.now());
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno1, livro2, LocalDate.now());
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno1, livro2, LocalDate.now());
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro2, LocalDate.now());
+        gerenciadorEmprestimo.devolverEmprestimo(livro2);
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro2, LocalDate.now());
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro3, LocalDate.now());
+        gerenciadorEmprestimo.devolverEmprestimo(livro3);
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro3, LocalDate.now());
+        gerenciadorEmprestimo.devolverEmprestimo(livro3);
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro3, LocalDate.now());
+        gerenciadorEmprestimo.devolverEmprestimo(livro3);
+        gerenciadorEmprestimo.solicitarEmprestimo(aluno2, livro3, LocalDate.now());
+
+
+        System.out.println("-----------------Histórico---------------");
+        gerenciadorEmprestimo.historicoEmprestimos();
+
+        System.out.println("--Dados dos Livros com Maior Quantidade--");
+        gerenciadorEmprestimo.dadosDoLivroComMaiorQuantidade();
+
+        System.out.println("-----------------------------------------");
+    }
+
 }
