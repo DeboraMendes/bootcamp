@@ -1,6 +1,6 @@
 package br.com.bootcamp.exer.exer7.conta;
 
-import br.com.dev.bootcamp.util.BigDecimalUtil;
+import br.com.bootcamp.util.BigDecimalUtil;
 
 import java.math.BigDecimal;
 
