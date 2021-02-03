@@ -1,8 +1,8 @@
 package br.com.bootcamp.aula.classeAbstrata;
 
-import br.com.dev.bootcamp.aula.classeAbstrata.animal.Animal;
-import br.com.dev.bootcamp.aula.classeAbstrata.animal.Cachorro;
-import br.com.dev.bootcamp.aula.classeAbstrata.animal.Gato;
+import br.com.bootcamp.aula.classeAbstrata.animal.Animal;
+import br.com.bootcamp.aula.classeAbstrata.animal.Cachorro;
+import br.com.bootcamp.aula.classeAbstrata.animal.Gato;
 
 public class Principal {
 

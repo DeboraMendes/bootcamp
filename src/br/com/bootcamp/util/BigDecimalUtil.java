@@ -19,14 +19,17 @@ public class BigDecimalUtil {
     }
 
     public static boolean isMaior(BigDecimal valor1, BigDecimal valor2) {
+        //1
         return valor1.compareTo(valor2) > 0;
     }
 
     public static boolean isIgual(BigDecimal valor1, BigDecimal valor2) {
+        //0
         return valor1.compareTo(valor2) == 0;
     }
 
     public static boolean isMenor(BigDecimal valor1, BigDecimal valor2) {
+        //-1
         return valor1.compareTo(valor2) < 0;
     }
 

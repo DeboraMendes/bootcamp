@@ -1,8 +1,8 @@
 package br.com.bootcamp.aula.polimorfismo;
 
-import br.com.dev.bootcamp.aula.polimorfismo.animal.Animal;
-import br.com.dev.bootcamp.aula.polimorfismo.animal.Cachorro;
-import br.com.dev.bootcamp.aula.polimorfismo.animal.Gato;
+import br.com.bootcamp.aula.polimorfismo.animal.Animal;
+import br.com.bootcamp.aula.polimorfismo.animal.Cachorro;
+import br.com.bootcamp.aula.polimorfismo.animal.Gato;
 
 public class Principal {
 

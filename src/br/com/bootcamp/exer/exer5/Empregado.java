@@ -1,6 +1,6 @@
 package br.com.bootcamp.exer.exer5;
 
-import br.com.dev.bootcamp.util.BigDecimalUtil;
+import br.com.bootcamp.util.BigDecimalUtil;
 
 import java.math.BigDecimal;
 

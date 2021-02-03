@@ -1,9 +1,9 @@
 package br.com.bootcamp.aula.interfaces;
 
-import br.com.dev.bootcamp.aula.interfaces.animal.Animal;
-import br.com.dev.bootcamp.aula.interfaces.animal.Cachorro;
-import br.com.dev.bootcamp.aula.interfaces.animal.Gato;
-import br.com.dev.bootcamp.aula.interfaces.relatorio.Relatorio;
+import br.com.bootcamp.aula.interfaces.animal.Animal;
+import br.com.bootcamp.aula.interfaces.animal.Cachorro;
+import br.com.bootcamp.aula.interfaces.animal.Gato;
+import br.com.bootcamp.aula.interfaces.relatorio.Relatorio;
 
 public class Principal {
 

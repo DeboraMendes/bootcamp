@@ -42,7 +42,7 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public void depositar(BigDecimal valor) {
-        //se foi usuado limite
+        //se foi usuado crédito
         if (BigDecimalUtil.isMaior(this.valorCreditoUsado, BigDecimal.ZERO)) {
             //se o valor do depósito for menor ou igual ao valor do crédito usado
             //atualizar somente o valor do crédito usado
