@@ -46,8 +46,11 @@ public class Exer7ContaCorrente {
         System.out.println("Depósito OK: " + contaCorrente); // devolver crédito
         System.out.println("------------------");
 
-        contaCorrente.depositar(BigDecimal.valueOf(5));
-        System.out.println("Depósito OK: " + contaCorrente); // devolver crédito
+        contaCorrente.depositar(BigDecimal.valueOf(10));
+        System.out.println("Depósito OK: " + contaCorrente); // devolver crédito + saldo
+
+        contaCorrente.depositar(BigDecimal.valueOf(10));
+        System.out.println("Depósito OK: " + contaCorrente); // depósito normal
 
         System.out.println("------------------------------------");
     }
