@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula.interfaces.relatorio;
+package br.com.bootcamp.aula.interfaces;
 
 public interface Imprimivel {
 

@@ -1,6 +1,6 @@
 package br.com.bootcamp.aula.interfaces.animal;
 
-import br.com.bootcamp.aula.interfaces.relatorio.Imprimivel;
+import br.com.bootcamp.aula.interfaces.Imprimivel;
 
 //classe abstrata: Animal
 //implementa a interface: Imprimível
