@@ -51,7 +51,7 @@ public class ContaCorrente extends ContaBancaria {
                 valorCredito = valorCredito.add(valor);
             } else {
                 BigDecimal valorQueSobraParaSaldo = valor.subtract(valorCreditoUsado);
-                valorCredito = valorCreditoUsado;
+                valorCredito = valorCredito.add(valorCreditoUsado);
                 valorCreditoUsado = BigDecimal.ZERO;
                 valorSaldo = valorQueSobraParaSaldo;
             }
