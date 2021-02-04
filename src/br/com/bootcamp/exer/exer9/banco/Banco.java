@@ -30,12 +30,12 @@ public class Banco implements Imprimivel {
 
     public void inserir(ContaBancaria contaBancaria) {
         if (contaBancaria == null) {
-            System.out.println("Conta bancária inválida.");
+//            System.out.println("Conta bancária inválida.");
         } else if (existe(contaBancaria)) {
-            System.out.println("Conta bancária já existe.");
+//            System.out.println("Conta bancária já existe.");
         } else {
             contaBancariaList.add(contaBancaria);
-            System.out.println("Conta bancária inserida com sucesso!");
+//            System.out.println("Conta bancária inserida com sucesso!");
         }
     }
 
@@ -46,7 +46,17 @@ public class Banco implements Imprimivel {
             //assim, não vazemos isso.
             //Remove somente se for a mesma instância
             boolean removido = contaBancariaList.remove(contaBancaria);
-            System.out.println(removido ? "Conta bancária removida com sucesso! " : "Conta bancária não existe.");
+
+            if (!removido && contaBancaria.getNumeroConta() != null) {
+                ContaBancaria contaBancariaReferencia = procurar(contaBancaria.getNumeroConta());
+                if (contaBancariaReferencia != null) {
+                    removido = contaBancariaList.remove(contaBancariaReferencia);
+                }
+            }
+            System.out.println(removido
+                    ? "Conta bancária removida com sucesso! "
+                    : "Conta bancária não existe."
+            );
         } else {
             System.out.println("Conta bancária não existe.");
         }

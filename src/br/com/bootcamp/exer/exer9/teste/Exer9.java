@@ -28,6 +28,7 @@ public class Exer9 {
         ContaCorrente contaCorrente001 = new ContaCorrente("001", BigDecimal.ZERO);
         ContaCorrente contaCorrente002 = new ContaCorrente("002", BigDecimal.ZERO);
         ContaPoupanca contaPoupanca003 = new ContaPoupanca("003", BigDecimal.ZERO);
+        ContaPoupanca contaPoupanca004 = new ContaPoupanca("001", BigDecimal.ZERO);
 
         Banco banco = new Banco();
         banco.inserir(null);
@@ -36,6 +37,10 @@ public class Exer9 {
         banco.inserir(contaCorrente001);
         banco.inserir(contaCorrente002);
         banco.inserir(contaPoupanca003);
+
+        banco.remover(contaPoupanca004);
+
+        banco.mostrarDados();
 
         System.out.println("Procurar: " + banco.procurar(""));
         System.out.println("Procurar: " + banco.procurar("003"));
