@@ -1,6 +1,6 @@
 package br.com.bootcamp.exer.exer9.conta;
 
-import br.com.bootcamp.exer.exer9.relatorio.Imprimivel;
+import br.com.bootcamp.exer.exer8.relatorio.Imprimivel;
 import br.com.bootcamp.util.BigDecimalUtil;
 
 import java.math.BigDecimal;
