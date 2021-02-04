@@ -7,12 +7,10 @@ import java.math.BigDecimal;
 public class ContaCorrente extends ContaBancaria {
 
     private BigDecimal valorCredito;
-    private BigDecimal valorCreditoUsado;
 
     public ContaCorrente(String numeroConta, BigDecimal valorCredito) {
         super(numeroConta);
         this.valorCredito = BigDecimalUtil.zeroIfNull(valorCredito);
-        this.valorCreditoUsado = BigDecimal.ZERO;
     }
 
     @Override
@@ -20,13 +18,12 @@ public class ContaCorrente extends ContaBancaria {
         if (BigDecimalUtil.isMaiorOuIgual(valorSaldo, valor)) {
             valorSaldo = valorSaldo.subtract(valor);
             System.out.println("Saque realizado com sucesso!");
-        } else if (BigDecimalUtil.isMaiorOuIgual(getValorSaldoSomadoValorCredito(), valor)) {
-            BigDecimal faltou = getValorFaltou(valor);
-            valorCredito = valorCredito.subtract(faltou);
-            valorCreditoUsado = valorCreditoUsado.add(faltou);
-            valorSaldo = BigDecimal.ZERO;
-            System.out.println("Saque realizado com sucesso!");
         } else {
+            if (BigDecimalUtil.isMaiorOuIgual(getValorSaldoSomadoValorCredito(), valor)) {
+                valorCredito = valorCredito.subtract(getValorFaltou(valor));
+                valorSaldo = BigDecimal.ZERO;
+                System.out.println("Saque realizado com sucesso!");
+            }
             System.out.println("Saldo insuficiente.");
         }
     }
@@ -42,23 +39,8 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public void depositar(BigDecimal valor) {
-        //se foi usuado crédito
-        if (BigDecimalUtil.isMaior(this.valorCreditoUsado, BigDecimal.ZERO)) {
-            //se o valor do depósito for menor ou igual ao valor do crédito usado
-            //atualizar somente o valor do crédito usado
-            if (BigDecimalUtil.isMenorOuIgual(valor, this.valorCreditoUsado)) {
-                valorCreditoUsado = valorCreditoUsado.subtract(valor);
-                valorCredito = valorCredito.add(valor);
-            } else {
-                BigDecimal valorQueSobraParaSaldo = valor.subtract(valorCreditoUsado);
-                valorCredito = valorCredito.add(valorCreditoUsado);
-                valorCreditoUsado = BigDecimal.ZERO;
-                valorSaldo = valorQueSobraParaSaldo;
-            }
-        } else {
-            valorSaldo = valorSaldo.add(valor);
-            System.out.println("Deposito realizado com sucesso!");
-        }
+        valorSaldo = valorSaldo.add(valor);
+        System.out.println("Deposito realizado com sucesso!");
     }
 
     @Override
@@ -74,4 +56,5 @@ public class ContaCorrente extends ContaBancaria {
     public void mostrarDados() {
         System.out.println(toString());
     }
+
 }
