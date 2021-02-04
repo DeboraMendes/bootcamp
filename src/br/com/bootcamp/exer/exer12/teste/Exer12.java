@@ -85,7 +85,8 @@ public class Exer12 {
         }
 //        carro.reduzMarcha(); //testar velocodade 0 e marca 0 -> -1
 
-        System.out.println("Autonomia de viagem do veículo: " + carro.calcularAutonomia(BigDecimal.TEN));
+        System.out.println("Autonomia de viagem do veículo: "
+                + carro.calcularAutonomia(BigDecimal.TEN));
 
         System.out.println("------------------------------------");
     }
