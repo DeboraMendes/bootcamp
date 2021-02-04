@@ -38,7 +38,7 @@ public class Exer14 {
         System.out.println("getVoo: " + voo.getNumero());
         System.out.println("getDataHora: " + voo.getDataHora());
 
-//        System.out.println("ocupa: " + voo.ocupa(15));
+        System.out.println("ocupa: " + voo.ocupa(15));
 
         System.out.println("------------------------------------");
     }
