@@ -29,12 +29,12 @@ public class VendaServiceImpl implements VendaService {
         return alterar(venda);
     }
 
-    private Venda inserir(Venda objeto) {
-        return dao.inserir(objeto);
+    private Venda inserir(Venda venda) {
+        return dao.inserir(venda);
     }
 
-    private Venda alterar(Venda objeto) {
-        return dao.alterar(objeto);
+    private Venda alterar(Venda venda) {
+        return dao.alterar(venda);
     }
 
     @Override
