@@ -13,31 +13,39 @@ public class Principal {
     public static void main(String[] args) {
 
         VendaService vendaService = new VendaServiceImpl(new VendaDAOImpl());
-        //vendas de janeiro
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.JANUARY, 1)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.JANUARY, 2)));
-        //vendas de fevereiro
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.FEBRUARY, 3)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.FEBRUARY, 4)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.FEBRUARY, 5)));
-        //vendas de março
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.MARCH, 6)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.MARCH, 7)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.MARCH, 8)));
-        vendaService.inserir(new Venda(LocalDate.of(2021, Month.MARCH, 9)));
+        Venda venda1 = new Venda(LocalDate.of(2021, Month.JANUARY, 1));
+        Venda venda2 = new Venda(LocalDate.of(2021, Month.JANUARY, 2));
+        Venda venda3 = new Venda(LocalDate.of(2021, Month.JANUARY, 3));
 
-        //imagine o seguinte cenário:
-        //o sistema precisa mostrar (view) quantas vendas teve no mês
-        //a view chamou o controller pelo url e mandou o período como parâmetro
-        LocalDate dataInicial = LocalDate.of(2021, Month.FEBRUARY, 1);
-        LocalDate dataFinal = LocalDate.of(2021, Month.FEBRUARY, 28);
+        //inseri
+        vendaService.salvar(venda1);
+        vendaService.salvar(venda2);
+        vendaService.salvar(venda3);
+        System.out.println("Buscar Todos" + vendaService.buscarTodos());
 
-        //o controller delegou para o service
-        Long totalVendas = vendaService.totalVendas(dataInicial, dataFinal);
+        //não vai dupliquei a venda1
+        vendaService.salvar(venda1);
+        System.out.println("Buscar Todos" + vendaService.buscarTodos());
 
-        //o service vai devolver o resultado para o controller
-        //e o controller vai dar o resultado pra view
-        System.out.println("Foram feitas " + totalVendas + " vendas em fevereiro.");
+        //não vai dupliquei a venda1
+        vendaService.salvar(new Venda(1l, LocalDate.of(2021, Month.JANUARY, 4)));
+        System.out.println("Buscar Todos" + vendaService.buscarTodos());
+
+        //alterar venda
+        venda2.setData(LocalDate.of(2021, Month.JANUARY, 31));
+        vendaService.salvar(venda2);
+        System.out.println("Buscar: " + vendaService.buscar(2l));
+
+        //excluir
+        vendaService.excluir(1l);
+        System.out.println("Buscar Todos" + vendaService.buscarTodos());
+
+        //total de vendas
+        Long janeiro = vendaService.totalVendas(LocalDate.of(2021, Month.JANUARY, 1), LocalDate.of(2021, Month.JANUARY, 31));
+        System.out.println("Total de vendas de janeiro: " + janeiro);
+        Long fevereiro = vendaService.totalVendas(LocalDate.of(2021, Month.FEBRUARY, 1), LocalDate.of(2021, Month.FEBRUARY, 28));
+        System.out.println("Total de vendas de fevereiro: " + fevereiro);
+
     }
 
 }

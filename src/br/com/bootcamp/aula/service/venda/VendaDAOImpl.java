@@ -26,18 +26,18 @@ public class VendaDAOImpl implements VendaDAO {
     }
 
     @Override
-    public Venda inserir(Venda objeto) {
-        objeto.setId(Long.valueOf(vendas.size()+1));
-        vendas.add(objeto);
-        return objeto;
+    public Venda inserir(Venda venda) {
+        venda.setId((long) vendas.size() +1);
+        vendas.add(venda);
+        return venda;
     }
 
     @Override
-    public Venda alterar(Venda objeto) {
-        for (int j = 0; j < vendas.size(); j++) {
-            if (vendas.get(j).getId().equals(objeto.getId())) {
-                vendas.set(j, objeto);
-                return objeto;
+    public Venda alterar(Venda venda) {
+        for (int i = 0; i < vendas.size(); i++) {
+            if (vendas.get(i).getId().equals(venda.getId())) {
+                vendas.set(i, venda);
+                return venda;
             }
         }
         return null;
@@ -45,9 +45,9 @@ public class VendaDAOImpl implements VendaDAO {
 
     @Override
     public void excluir(Long id) {
-        for (int j = 0; j < vendas.size(); j++) {
-            if (vendas.get(j).getId().equals(id)) {
-                vendas.remove(j);
+        for (int i = 0; i < vendas.size(); i++) {
+            if (vendas.get(i).getId().equals(id)) {
+                vendas.remove(i);
                 break;
             }
         }

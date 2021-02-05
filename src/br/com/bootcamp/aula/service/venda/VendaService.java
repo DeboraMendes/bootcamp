@@ -7,11 +7,9 @@ public interface VendaService {
 
     List<Venda> buscarTodos();
 
-    Venda buscarPorId(Long id);
+    Venda buscar(Long id);
 
-    Venda inserir(Venda objeto);
-
-    Venda alterar(Venda objeto);
+    Venda salvar(Venda venda);
 
     void excluir(Long id);
 

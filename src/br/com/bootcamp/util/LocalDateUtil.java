@@ -1,6 +1,7 @@
 package br.com.bootcamp.util;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class LocalDateUtil {
 
@@ -31,6 +32,14 @@ public class LocalDateUtil {
                                   LocalDate dataInicial,
                                   LocalDate dataFinal) {
         return isMaiorOuIgual(data, dataInicial) && isMenorOuIgual(data, dataFinal);
+    }
+
+    public static String getDataFormatada(LocalDate data) {
+        if (data != null) {
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return formato.format(data);
+        }
+        return null;
     }
 
 }

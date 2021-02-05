@@ -26,18 +26,18 @@ public class VendaDAOImpl implements VendaDAO {
     }
 
     @Override
-    public Venda inserir(Venda objeto) {
-        objeto.setId((long) vendas.size() +1);
-        vendas.add(objeto);
-        return objeto;
+    public Venda inserir(Venda venda) {
+        venda.setId((long) vendas.size() + 1);
+        vendas.add(venda);
+        return venda;
     }
 
     @Override
-    public Venda alterar(Venda objeto) {
+    public Venda alterar(Venda venda) {
         for (int i = 0; i < vendas.size(); i++) {
-            if (vendas.get(i).getId().equals(objeto.getId())) {
-                vendas.set(i, objeto);
-                return objeto;
+            if (vendas.get(i).getId().equals(venda.getId())) {
+                vendas.set(i, venda);
+                return venda;
             }
         }
         return null;

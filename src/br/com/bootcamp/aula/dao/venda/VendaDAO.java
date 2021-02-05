@@ -9,9 +9,9 @@ public interface VendaDAO {
 
     Venda buscar(Long id);
 
-    Venda inserir(Venda objeto);
+    Venda inserir(Venda venda);
 
-    Venda alterar(Venda objeto);
+    Venda alterar(Venda venda);
 
     void excluir(Long id);
 

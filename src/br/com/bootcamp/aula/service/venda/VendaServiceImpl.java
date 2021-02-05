@@ -17,17 +17,23 @@ public class VendaServiceImpl implements VendaService {
     }
 
     @Override
-    public Venda buscarPorId(Long id) {
+    public Venda buscar(Long id) {
         return dao.buscar(id);
     }
 
     @Override
-    public Venda inserir(Venda objeto) {
+    public Venda salvar(Venda venda) {
+        if (venda.getId() == null) {
+            return inserir(venda);
+        }
+        return alterar(venda);
+    }
+
+    private Venda inserir(Venda objeto) {
         return dao.inserir(objeto);
     }
 
-    @Override
-    public Venda alterar(Venda objeto) {
+    private Venda alterar(Venda objeto) {
         return dao.alterar(objeto);
     }
 
