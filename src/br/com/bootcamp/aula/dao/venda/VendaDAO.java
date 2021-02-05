@@ -13,7 +13,7 @@ public interface VendaDAO {
 
     Venda alterar(Venda venda);
 
-    void excluir(Long id);
+    boolean excluir(Long id);
 
     Long totalVendas(LocalDate dataInicial, LocalDate dataFinal);
 

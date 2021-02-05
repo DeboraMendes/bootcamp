@@ -38,8 +38,8 @@ public class VendaServiceImpl implements VendaService {
     }
 
     @Override
-    public void excluir(Long id) {
-        dao.excluir(id);
+    public boolean excluir(Long id) {
+        return dao.excluir(id);
     }
 
     @Override

@@ -44,13 +44,13 @@ public class VendaDAOImpl implements VendaDAO {
     }
 
     @Override
-    public void excluir(Long id) {
+    public boolean excluir(Long id) {
         for (int i = 0; i < vendas.size(); i++) {
             if (vendas.get(i).getId().equals(id)) {
-                vendas.remove(i);
-                break;
+                return vendas.remove(i) != null;
             }
         }
+        return false;
     }
 
     @Override
