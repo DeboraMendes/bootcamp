@@ -27,7 +27,7 @@ public class VendaDAOImpl implements VendaDAO {
 
     @Override
     public Venda inserir(Venda objeto) {
-        objeto.setId((long) vendas.size() + 1);
+        objeto.setId((long) vendas.size() +1);
         vendas.add(objeto);
         return objeto;
     }
@@ -58,7 +58,7 @@ public class VendaDAOImpl implements VendaDAO {
         //imagine que aqui será retornado o resultado da seguinte consulta:
         //SELECT COUNT(id) FROM venda WHERE data BETWEEN :dataInicial AND :dataFinal;
         return vendas.stream()
-                .filter(venda -> LocalDateUtil.between(venda.getData(), dataInicial, dataFinal))
+                .filter(venda -> LocalDateUtil.isEntre(venda.getData(), dataInicial, dataFinal))
                 .count();
     }
 

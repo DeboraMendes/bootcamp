@@ -1,5 +1,7 @@
 package br.com.bootcamp.aula.dao.venda;
 
+import br.com.bootcamp.util.LocalDateUtil;
+
 import java.time.LocalDate;
 
 public class Venda {
@@ -28,4 +30,11 @@ public class Venda {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "id=" + id +
+                ", data=" + LocalDateUtil.getDataFormatada(data) +
+                '}';
+    }
 }

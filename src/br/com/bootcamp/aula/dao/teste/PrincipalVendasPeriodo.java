@@ -1,4 +1,4 @@
-package br.com.bootcamp.aula.dao;
+package br.com.bootcamp.aula.dao.teste;
 
 import br.com.bootcamp.aula.dao.venda.Venda;
 import br.com.bootcamp.aula.dao.venda.VendaDAO;
@@ -7,7 +7,7 @@ import br.com.bootcamp.aula.dao.venda.VendaDAOImpl;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class Principal {
+public class PrincipalVendasPeriodo {
 
     public static void main(String[] args) {
 
@@ -28,8 +28,8 @@ public class Principal {
         //imagine o seguinte cenário:
         //o sistema precisa mostrar (view) quantas vendas teve no mês
         //a view chamou o controller pelo url e mandou o período como parâmetro
-        LocalDate dataInicial = LocalDate.of(2021, Month.FEBRUARY, 1);
-        LocalDate dataFinal = LocalDate.of(2021, Month.FEBRUARY, 28);
+        LocalDate dataInicial = LocalDate.of(2021, Month.MARCH, 1);
+        LocalDate dataFinal = LocalDate.of(2021, Month.MARCH, 28);
 
         //o controller delegou para o service
         Long totalVendas = dao.totalVendas(dataInicial, dataFinal);
