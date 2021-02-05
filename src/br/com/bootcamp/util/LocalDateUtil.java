@@ -27,7 +27,7 @@ public class LocalDateUtil {
         return isMenor(data1, data2) || isIgual(data1, data2);
     }
 
-    public static boolean between(LocalDate data,
+    public static boolean isEntre(LocalDate data,
                                   LocalDate dataInicial,
                                   LocalDate dataFinal) {
         return isMaiorOuIgual(data, dataInicial) && isMenorOuIgual(data, dataFinal);
